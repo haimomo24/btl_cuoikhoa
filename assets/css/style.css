@@ -210,6 +210,20 @@
     top: 225px;
     left: 1084px;
   }
+  .image-right{
+    width:132.34px;
+    height:66.61px;
+    position: absolute;
+    top:614.62px;
+    left:0;
+  }
+  .image-left{
+    width:195px;
+    height:262px;
+    position: absolute;
+    top:365.8px;
+    right:0;
+  }
 
 /* -------------------baner---------------------- */
    .baner{
@@ -230,6 +244,21 @@
     position: absolute;
     top:1079px;
   
+}
+.tex {
+  width: 648px;
+  height: 52px;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 260px;
+  left: -1%;
+  margin-left: -50px;
+}
+.tex p {
+  line-height: 39.84px;
+  font-size: 40px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
 }
 
 .img-category{

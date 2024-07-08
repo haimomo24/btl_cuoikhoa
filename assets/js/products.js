@@ -3,27 +3,30 @@ let thisPage = 1;
 const limit = 6;
 const rowJs = document.querySelector(".row-js");
 const listPage = document.querySelector(".listPage");
+let data = [];
 
+// Fetch the product data from the API
 const getApi = async (url) => {
-  let response = await axios.get(url);
-  showProduct(response.data);
-  loadItem();
+  try {
+    let response = await axios.get(url);
+    data = response.data;
+    showProduct(data);
+    loadItem();
+  } catch (error) {
+    console.error("Error fetching data from API:", error);
+  }
 };
 
+// Display products on the page
 const showProduct = (data) => {
   let HTML = "";
   data.forEach((value) => {
     HTML += `<div class="col-12 col-sm-4 col-md-4 item">
                             <div class="cart-category-products">
                                 <a href="./detail.html?id=${value.id}">
-                                    
-                                        <img src="${value.image}" alt="">
-                                        <p class="title-category">${value.title}<p>
-                                        <p class="price-category">${value.price}</p>
-                                        
-                                            
-                                        
-                                    
+                                    <img src="${value.image}" alt="">
+                                    <p class="title-category">${value.title}</p>
+                                    <p class="price-category">${value.price}</p>
                                 </a>
                             </div>
                          </div>`;
@@ -32,12 +35,13 @@ const showProduct = (data) => {
   loadItem();
 };
 
+// Load items for the current page
 const loadItem = () => {
   const items = document.querySelectorAll(".item");
   let beginGet = limit * (thisPage - 1);
-  let endGet = limit * thisPage - 1;
+  let endGet = limit * thisPage;
   items.forEach((item, key) => {
-    if (key >= beginGet && key <= endGet) {
+    if (key >= beginGet && key < endGet) {
       item.style.display = "block";
     } else {
       item.style.display = "none";
@@ -46,6 +50,7 @@ const loadItem = () => {
   listPagination(items.length);
 };
 
+// Create pagination elements
 const listPagination = (totalItems) => {
   const count = Math.ceil(totalItems / limit);
   listPage.innerHTML = "";
@@ -75,122 +80,78 @@ const listPagination = (totalItems) => {
   }
 };
 
+// Change the current page
 const changePage = (i) => {
   thisPage = i;
   loadItem();
 };
 
-// Lọc sản phẩm theo từ khóa
+// Filter products by search term
 const filterBySearchTerm = (data, searchTerm) => {
   return data.filter((item) => {
     const oldTitle = item.title.toLowerCase();
     return oldTitle.includes(searchTerm);
   });
 };
-// Loc san pham theo category (checkbox)
-const filterByCategory = (
-  filteredData,
-  votCheckbox,
-  giayCheckBox,
-  quanCheckBox,
-  vayCheckBox,
-  aoCheckBox,
-  tuiCheckBox,
-  baloCheckBox,
-  phuCheckBox
-) => {
-  console.log(votCheckbox);
-  // Nguoi dung khong chon category nao -> tra ve array nhan duoc
-  if (
-    !votCheckbox &&
-    !giayCheckBox &&
-    !quanCheckBox &&
-    !vayCheckBox &&
-    !aoCheckBox &&
-    !tuiCheckBox &&
-    !baloCheckBox &&
-    !phuCheckBox
-  ) {
+
+// Filter products by selected categories
+const filterByCategory = (filteredData, categories) => {
+  if (categories.length === 0) {
     return filteredData;
   }
 
-  const resultCheckbox = filteredData.filter((item) => {
-    // console.log(item);
+  return filteredData.filter((item) => {
     const categoryTitle = item.category.toLowerCase();
-    console.log(categoryTitle);
-
-    return (
-      (votCheckbox && categoryTitle === "Vợt cầu lông") ||
-      (giayCheckBox && categoryTitle === "Giày") ||
-      (quanCheckBox && categoryTitle === "Quần cầu lông") ||
-      (vayCheckBox && categoryTitle === "váy cầu lông") ||
-      (aoCheckBox && categoryTitle === "Áo cầu lông") ||
-      (tuiCheckBox && categoryTitle === "Túi xách cầu") ||
-      (baloCheckBox && categoryTitle === "Balo cầu lông") ||
-      (phuCheckBox && categoryTitle === "Phụ kiện cầu lông")
-    ); //return cua ham filter
+    return categories.includes(categoryTitle);
   });
-
-  return resultCheckbox;
 };
 
-//  Hàm tổng hợp để lọc sản phẩm
+// Filter products based on search term and selected categories
 const filterProducts = () => {
-  // Lay gia tri nguoi dung khi nhap vao input
   let textSearch = document.querySelector(".form-control").value;
-  let searchTerm = textSearch.toLowerCase().trim(); // Covert Chua In hoa -> Thuong, bo khoang trang
+  let searchTerm = textSearch.toLowerCase().trim();
 
-  // Truy cap phan tu, check xem nguoi dung click vao checkbox nao ?
-  const votCheckbox = document.querySelector("#option_1").checked;
-  const giayCheckBox = document.querySelector("#option_2").checked;
-  const quanCheckBox = document.querySelector("#option_3").checked;
-  const vayCheckBox = document.querySelector("#option_4").checked;
-  const aoCheckBox = document.querySelector("#option_5").checked;
-  const tuiCheckBox = document.querySelector("#option_6").checked;
-  const baloCheckBox = document.querySelector("#option_7").checked;
-  const phuCheckBox = document.querySelector("#option_8").checked;
+  const categories = [];
+  if (document.querySelector("#option_1").checked) categories.push("vợt");
+  if (document.querySelector("#option_2").checked) categories.push("giày");
+  if (document.querySelector("#option_3").checked) categories.push("quần");
+  if (document.querySelector("#option_4").checked) categories.push("váy");
+  if (document.querySelector("#option_5").checked) categories.push("áo");
+  if (document.querySelector("#option_6").checked) categories.push("túi");
+  if (document.querySelector("#option_7").checked) categories.push("balo");
+  if (document.querySelector("#option_8").checked) categories.push("phụ");
+
+  console.log("Search Term:", searchTerm);
+  console.log("Selected Categories:", categories);
 
   let filteredData = data;
 
-  // Lọc sản phẩm theo từ khóa
-  filteredData = filterBySearchTerm(data, searchTerm);
+  filteredData = filterBySearchTerm(filteredData, searchTerm);
+  console.log("After Search Term Filter:", filteredData);
 
-  // Loc san pham theo category (checkbox)
-  // console.log(filterByCategory(filteredData, namCheckbox, nuCheckBox));
-  filteredData = filterByCategory(
-    filteredData,
-    votCheckbox,
-    giayCheckBox,
-    quanCheckBox,
-    vayCheckBox,
-    aoCheckBox,
-    tuiCheckBox,
-    baloCheckBox,
-    phuCheckBox
-  );
+  filteredData = filterByCategory(filteredData, categories);
+  console.log("After Category Filter:", filteredData);
 
-  // Hiển thị sản phẩm đã lọc
-  renderProducts(filteredData);
+  showProduct(filteredData);
+  loadItem(); // Ensure that pagination is updated for filtered data
 };
 
+// Add event listeners for search input and checkboxes
 let clearTime;
-// Lắng nghe sự kiện nhập liệu trên ô tìm kiếm
 let inputSearch = document.querySelector(".form-control");
 inputSearch.addEventListener("input", () => {
   clearTimeout(clearTime);
-
-  // Neu sau 3s khong nhap nua thi moi goi vao filterProducts();
   clearTime = setTimeout(() => {
     filterProducts();
-  }, 1000); //1000ms -> 1s
+  }, 1000);
 });
 
-// Lắng nghe sự kiện người dùng click checkbox
 let inputCheckBox = document.querySelectorAll(".form-check-input");
-inputCheckBox.forEach((checkbox, index) => {
+inputCheckBox.forEach((checkbox) => {
   checkbox.addEventListener("click", () => {
     filterProducts();
   });
 });
 
+// Fetch data from the API on page load
 getApi(API_URL);

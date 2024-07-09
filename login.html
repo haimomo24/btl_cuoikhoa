@@ -118,16 +118,71 @@
           </div>
         </nav>
 
-      <!-- detail -->
-       <div class="detail">
+       <!-- login -->
+       <div class="login">
         <div class="container">
-            <div class="row show-cart-js">
-                
-                    
+            <div class="group-login">
+                <div class="cart-login">
+                    <h1>Đăng nhập</h1>
+                    <form>
+                         
+                        <!-- Email input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                          <input id="email" type="email" placeholder="Email của bạn " class="form-control input-login-gmail-js" />
+                          
+                        </div>
+                      
+                        <!-- Password input -->
+                        <div data-mdb-input-init class="form-outline mb-4">
+                          <input type="password" id="password" placeholder="Mật khẩu của bạn " class="form-control input-login-password-js" />
+                         
+                        </div>
+                      
+                        <!-- 2 column grid layout for inline styling -->
+                        <div class="row mb-4">
+                          <div class="col d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                              <label class="form-check-label" for="form2Example31"> Ghi nhớ  </label>
+                            </div>
+                          </div>
+                      
+                          <div class="col">
+                            <!-- Simple link -->
+                            <a href="#" style="text-decoration: none; color:#8DC63F;">Quên mật khẩu ?</a>
+                          </div>
+                        </div>
+                      
+                        <!-- Submit button -->
+                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4 btn-login-js">Sign in</button>
+                      
+                        <!-- Register buttons -->
+                        <div class="text-center">
+                          <p>Bạn chưa có tài khoản? <a href="register.html"style="text-decoration: none; color:#8DC63F;">Đăng kí </a></p>
+                          <p>Đăng nhập với :</p>
+                          <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                            <i class="fa-brands fa-facebook"></i>
+                          </button>
+                      
+                          <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-google"></i>
+                          </button>
+                      
+                          <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-twitter"></i>
+                          </button>
+                      
+                          <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                            <i class="fab fa-github"></i>
+                          </button>
+                        </div>
+                      </form>
                 </div>
             </div>
+           
         </div>
-       </div>
+    </div>
 
         <!-- Footer -->
         <div class="footer">
@@ -268,7 +323,7 @@
         <!-- js-owlcarosel -->
         <script src="./lib/OwlCarousel/owl.carousel.min.js"></script>
         <!-- js-main -->
-        <script src="./assets/js/detail.js"></script>
+        <script src="./assets/js/products.js"></script>
       </body>
     </html>
   </body>

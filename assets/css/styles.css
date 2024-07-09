@@ -259,3 +259,116 @@
     background-color:rgb(233, 82, 17) ;
     color:#fff;
 }
+/* login */
+.login{
+    width:100%;
+   
+  
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+.group-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.cart-login{
+    width:40%;
+    
+
+}
+.cart-login h1 {
+    text-align: center;
+    color:rgb(233, 82, 17);
+    font-size: 20px;
+}
+
+
+.cart-login form {
+    text-align: center;
+    color: rgb(233, 82, 17);
+}
+.cart-login form button{
+    background-color: rgb(233, 82, 17);
+}
+.cart-login form button:hover{
+    background-color: #8DC63F;
+}
+.cart-login form button i {
+    color: #FFFFFF;
+}
+.form-check .form-check-input{
+    background-color:rgb(233, 82, 17);
+}
+.cart-login form button a {
+    text-decoration: none;
+}
+cart-login form .col a{
+    text-decoration: none !important;
+}
+
+/* register */
+.register{
+    color:rgb(233, 82, 17);
+    border: none !important;
+}
+.register button{
+    background-color: rgb(233, 82, 17);
+    color: #FFFFFF;
+}
+.register button:hover{
+    background-color: #8DC63F;
+}
+.register p{
+    color:rgb(233, 82, 17) !important;
+}
+.register p a{
+    color: #8DC63F !important;
+    text-decoration: none !important;
+}
+/* detail */
+.detail{
+    margin-top:50px;
+
+}
+
+.image-detail img{
+    object-fit: cover;
+    width:100%;
+    
+}
+
+.show-detail h3{
+    color:rgb(233, 82, 17) ;
+    margin-top: 30px;
+  
+}
+.show-detail button{
+    background-color:rgb(233, 82, 17) ;
+    color: #FFFFFF;
+    width: 140px;
+    height:40px;
+    margin-top: 30px;
+    
+    
+}
+/* uu dai */
+.pro-discount.uu_dai {
+   
+    margin-top: 30px;
+}
+.pro-discount {
+    
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px dashed #E95221;
+    background: rgba(1, 86, 127, 0.02);
+}
+
+
+
+
+
+

@@ -397,6 +397,9 @@ cart-login form .col a{
     color: rgb(233, 82, 17);
     margin-top:10px;
 }
+.show-detail button i{
+    margin-right: 10px;
+}
 
 
 

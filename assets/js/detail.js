@@ -43,7 +43,7 @@ const showDetail = (data) => {
                 <div class="show-detail" data-id="${detail.id}">
                     <h2 class="product-title">${detail.title}</h2>
                     <h3 class="product-price">${detail.price}</h3>
-                    <button class="add-to-cart">mua ngay</button>
+                    <button class="add-to-cart"> <i class="fa-solid fa-cart-shopping"></i>Mua ngay</button>
                 </div>
                 <div class="pro-discount uu_dai">
                     <legend>

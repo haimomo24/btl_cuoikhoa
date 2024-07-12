@@ -27,7 +27,7 @@ const showProduct = (data) => {
                                 <a href="./detail.html?id=${value.id}">
                                     <img src="${value.image}" alt="">
                                     <p class="title-category">${value.title}</p>
-                                    <p class="price-category">${value.price}</p>
+                                    <p class="price-category">${value.price} VND</p>
                                 </a>
                             </div>
                          </div>`;
@@ -102,7 +102,7 @@ const filterByCategory = (filteredData, categories) => {
   }
 
   return filteredData.filter((item) => {
-    const categoryTitle = item.category.toLowerCase();
+    const categoryTitle = item.category.toLowerCase().trim();
     return categories.includes(categoryTitle);
   });
 };

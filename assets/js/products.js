@@ -5,6 +5,7 @@ const rowJs = document.querySelector(".row-js");
 const listPage = document.querySelector(".listPage");
 let data = [];
 
+
 // Fetch the product data from the API
 const getApi = async (url) => {
   try {
@@ -154,4 +155,5 @@ inputCheckBox.forEach((checkbox) => {
 });
 
 // Fetch data from the API on page load
+
 getApi(API_URL);

@@ -42,7 +42,7 @@ const showDetail = (data) => {
             <div class="detail-option">
                 <div class="show-detail" data-id="${detail.id}">
                     <h2 class="product-title">${detail.title}</h2>
-                    <h3 class="product-price">${detail.price}</h3>
+                    <h3 class="product-price">${detail.price} VND</h3>
                     <button class="add-to-cart"> <i class="fa-solid fa-cart-shopping"></i>Mua ngay</button>
                 </div>
                 <div class="pro-discount uu_dai">
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="col-md-2 d-flex justify-content-center">
                         <div>
                           <p class="small text-muted mb-4 pb-2">Color</p>
-                          <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color: #fdd8d2;"></i> pink rose</p>
+                          <p class="lead fw-normal mb-0"><i class="fas fa-circle me-2" style="color:#E95221;"></i> pink rose</p>
                         </div>
                       </div>
                       <div class="col-md-2 d-flex justify-content-center">

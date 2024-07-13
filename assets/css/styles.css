@@ -381,10 +381,18 @@ cart-login form .col a{
 .cart-moder-over{
     width: 100%;
     height:auto;
-    
-    position: fixed;
+    top:150px;
+    position: absolute;
     transform: translateX(300%); 
     transition: .5s ease-out;
+}
+.vh-100{
+   
+    height: auto !important;
+}
+.products-overlay{
+    width: 100%;
+    height:auto;
 }
 .close-cart{
     width:100%;
@@ -397,6 +405,7 @@ cart-login form .col a{
     color: rgb(233, 82, 17);
     margin-top:10px;
 }
+
 .show-detail button i{
     margin-right: 10px;
 }
@@ -424,7 +433,28 @@ cart-login form .col a{
     background-color: #E95221;
     color: #FFFFFF;
 }
+.map-form {
+    margin-bottom: 30px;
+}
 
+
+@media screen and (max-width:1000px){ 
+   .section_services .cart-services .icon-services i{
+    font-size: 25px;
+   }
+   .section_services .cart-services .title-services p {
+    font-size: 14px;
+   }
+} 
+@media screen and (max-width:995px) {
+    .category-products .content-category .category-products-menu {
+        display: none;
+    }
+    .category-products .content-category {
+        display: flex;
+        justify-content: center;
+    }
+}
 
 
 

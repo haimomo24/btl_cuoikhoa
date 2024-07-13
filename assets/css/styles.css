@@ -400,6 +400,32 @@ cart-login form .col a{
 .show-detail button i{
     margin-right: 10px;
 }
+/* liên hệ  */
+.connection {
+    width: 100%;
+    margin-top: 30px;
+
+}
+
+.connection-title p {
+    color: #E95221;
+}
+
+.connection-input {
+    margin-bottom: 30px;
+}
+.btn-success {
+    color: #FFFFFF;
+}
+.list-unstyled li i {
+    color:#E95221 !important;
+}
+.btn-primary {
+    background-color: #E95221;
+    color: #FFFFFF;
+}
+
+
 
 
 

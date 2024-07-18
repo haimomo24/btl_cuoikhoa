@@ -27,6 +27,7 @@ const showProduct = (data) => {
                                 <a href="./detail.html?id=${value.id}">
                                     <img src="${value.image}" alt="">
                                     <p class="title-category">${value.title}</p>
+                                    
                                     <p class="price-category">${value.price} VND</p>
                                 </a>
                             </div>

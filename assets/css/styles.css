@@ -348,7 +348,10 @@ cart-login form .col a{
     
     
 }
-
+.span-detail{
+    font-size: 20px;
+    margin-top: 30px;
+}
 .show-detail h3{
     color:rgb(233, 82, 17) ;
     margin-top: 30px;
@@ -408,6 +411,18 @@ cart-login form .col a{
 
 .show-detail button i{
     margin-right: 10px;
+}
+.product_detail_title{
+    width: 100%;
+}
+.product_detail_title .img-show-detail {
+    object-fit: cover;
+}
+.rating {
+    display: flex;
+}
+.rating li {
+    list-style: none;
 }
 /* liên hệ  */
 .connection {

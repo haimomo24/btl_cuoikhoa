@@ -2,9 +2,7 @@ const API_URL = "https://r3x9h4-3000.csb.app/products";
 
 // Truy cập phần tử
 let imgDetail = document.querySelector(".show-cart-js");
-const buttonCart = document.querySelector(".cart-shopping")
-
-const openCart = document.querySelector(".cart-moder-over")
+ 
 
 
 // Get ID sản phẩm
@@ -157,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       removeCartItem(event.target);
     }
   });
+ 
 
   const addToCartClicked = (button) => {
     let parentCart = button.closest(".show-detail");
@@ -179,11 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Sản phẩm này đã có trong giỏ hàng.");
       return;
     }
-    buttonCart.addEventListener("click",()=>{
-      console.log(123)
-      openCart.style.transform = "translateX(0px)";
-      
-    })
+    
     let divEL = document.createElement("div");
     divEL.classList.add("product-row");
     divEL.setAttribute("data-id", productId);
@@ -256,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
                           </button>
                         </div>
                   <button type="button" class="btn btn-primary btn-lg">
-                    Add to cart
+                    Mua
                   </button>
                 </div>
               </div>
@@ -294,3 +289,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+let buttonCart = document.querySelector(".cart-shopping")
+
+ let openCart = document.querySelector(".cart-moder-over")
+ console.log(openCart)
+ buttonCart.addEventListener("click",()=>{
+  console.log(openCart)
+   openCart.style.transform = " translateX(0%)";
+  
+ })

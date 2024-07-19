@@ -44,3 +44,13 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+let messenger = document.querySelector(".messenger");
+let messengerBox = document.querySelector(".messenger-box");
+let closeX =document.querySelector(".fa-regular");
+messenger.addEventListener("click",() =>{
+  messengerBox.style.transform = "translate(0)";
+});
+closeX.addEventListener("click",() =>{
+  messengerBox.style.transform = "translate(3000px)";
+})

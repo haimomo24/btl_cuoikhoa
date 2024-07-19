@@ -358,6 +358,115 @@ cart-login form .col a{
   #myBtn:hover {
     background-color: #555; /* Add a dark-grey background on hover */
   }
+  /* messenger */
+  .messenger {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    background-color: #E95221;
+    color: #FFFFFF;
+    z-index: 99;
+    border: none; 
+    outline: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    outline: none;
+    
+  }
+  .messenger-box {
+    position: fixed;
+    bottom: 200px;
+    right:10px;
+    width:350px;
+    height:500px;
+    transform: translate(3000px);
+    transition: .5s ease-out;
+    box-shadow: 0 0 3px  #1675FF;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #FFFFFF;
+    z-index: 99;
+  }
+  .messenger-box p {
+    font-size: 10px;
+    color: #3e4246;
+    margin-top: 10px;
+  }
+  .messenger-header{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#1675FF;
+    border-radius: 10px 10px 0 0;
+  }
+ 
+ 
+  .messenger-box .messenger-header  a{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+  .messenger-box .messenger-header img {
+    width:20%;
+  }
+  .messenger-box .messenger-header i {
+    margin-right: 10px;
+    color: #FFFFFF;
+    font-size: 25px;
+  }
+  .chat-messenger {
+    width:100%;
+    display: flex;
+    
+  }
+  .avatar{
+    width:13%;
+   
+    border-radius: 50%;
+    
+  }
+  .messenger-title {
+    width:80%;
+    box-shadow: 0 0 3px  #F3F4F5;
+    background-color:#F3F4F5;
+    margin-left: 10px;
+  }
+  .chat-nember {
+    width:100%;
+    height:50px;
+    
+    position: absolute;
+    bottom: 0;
+    border-top:1px solid #b5b6b8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .chat-nember input {
+    width:100%;
+    
+    margin-left: 10px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+
+  }
+  .chat-nember input:focus{
+    outline: none;
+  }
+  .chat-nember input::placeholder{
+    font-size: 13px;
+    text-align: center;
+    
+  }
+  .icon-chat i {
+    margin-right: 5px;
+  }
+
 /* detail */
 .detail{
     margin-top:50px;
